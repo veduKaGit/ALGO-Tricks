@@ -14,22 +14,22 @@
 // (m + n*x + k) = 2*(m + n*y + k)
 // reduces to => n*(x-2*y) = m+k
 // can we written as => n*Z = m+k (where Z is an integer >= 0)
-// thus, **n*Z = m+k** => eqn 1
+// thus, n*Z = m+k => eqn 1 => we know its true
 
 // Once both slow and fast coincide, we move fast to the first node
 // then both move at same speed
 
-// we need to prove that now they'll coincide at the cycle starting node
+// we need to prove that this time they'll coincide at the cycle starting node
 
 // fast reaches cycle start in m steps
 // slow is already k steps ahead of cycle start node
-// if we want both to coincide at cycle start node:
-// for slow pointer it might take these many steps: 
+// if we want both to coincide at cycle start node, slow pointer will take these many steps: 
 //    n-k (0 extra cycles)
 //    2*n-k (1 extra cycle)
 //    3*n-k (2 extra cycles)
 //    so on....
-// this satisfies our eqn 1
+// this assumtion again gives us eqn 1 => m = Z*n-k
+// Hence Proved => assumption is true
 
 class Solution {
 public:
