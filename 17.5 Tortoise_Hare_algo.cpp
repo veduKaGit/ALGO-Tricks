@@ -23,7 +23,7 @@
 // all numbers are in the range [1,n]
 // multiple numbers can repeat multiple times
 // we can return ANY number that is repeating
-// example => [1, 4, 4, 3, 2, 4, 3, 3]
+// example => [1, 4, 4, 3, 6, 4, 3, 3]
 // our soln will work here as well
 
 class Solution {
