@@ -1,21 +1,34 @@
-//SORT MAP by value
+// SORT vector<pair<int, int>>
+// customize your own sort function
 
-class Solution {
-public:
-    static bool mycmp(pair<int,int>&a ,pair<int,int>&b)  //take care to use STATIC! , and use '&' with both the arguments
-    {
-        if(a.second == b.second) return a.first > b.first;
-        return a.second < b.second;
-    }
-  
-    vector<int> frequencySort(vector<int>& nums) {
+// why we use '&'?
+// it will work even without it
+// we just pass by reference, it avoids copying the object. Thus no TLE.
 
-        unordered_map<int, int> mapp;
-        vector<pair<int, int>> v;
-                
-        sort(v.begin(), v.end(), mycmp);  //this cmp function can be applied to vector pairs...NOT MAPS...throws error
-          
-        ...further code...
-      
+
+// IF we have csort function inide a class => use STATIC => static bool csort ()
+// Static functions belong to the class itself
+// not to an instance of the class
+// They can be called directly using the class name, without needing an object
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool csort(pair<int, int>&a, pair<int, int>&b){  // use '&' !!!
+    if(a.second==b.second)
+        return a.first>b.first;  // if values are same, sort descending based on keys
+    return a.second<b.second;    //sort ascending based on value
+}
+
+int main()
+{
+    vector<pair<int, int>>v = {{1,3}, {2,3}, {0, 3}, {4, 5}, {7, 5} , {9,9}, {7,9}, {6,6}};
+    sort(v.begin(), v.end(), csort);  //use custom sort function
+    
+    for(auto x:v){
+        cout<<x.first<<" "<<x.second<<endl;
     }
-};
+    
+    return 0;
+}
