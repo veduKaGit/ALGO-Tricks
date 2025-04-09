@@ -2,7 +2,7 @@
 // If a number x is not prime, it can be written as a product of two factors:
 // x = a * b
 // If both a and b were greater than sqrt(x), then:
-// a * b > sart(x) * sqrt(x) => contradicts our assumption
+// a * b > sqrt(x) * sqrt(x) => contradicts our assumption
 // So, at least one of the factors must be less than or equal to sqrt(x)
 
 
