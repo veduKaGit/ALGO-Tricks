@@ -1,8 +1,16 @@
+// why do we check sqrt(x) only?
+// If a number x is not prime, it can be written as a product of two factors:
+// x = a * b
+// If both a and b were greater than sqrt(x), then:
+// a * b > sart(x) * sqrt(x) => contradicts our assumption
+// So, at least one of the factors must be less than or equal to sqrt(x)
+
+
 bool isPrime(int x) {
     if(x==0 || x==1)
         return false;
     
-    for (int i = 2; i * i <= x; i++) {    //time complexity => sqrt(x)
+    for (int i = 2; i * i <= x; i++) {    //only check till sqrt(x)
         if (x % i == 0)
             return false;
     }
