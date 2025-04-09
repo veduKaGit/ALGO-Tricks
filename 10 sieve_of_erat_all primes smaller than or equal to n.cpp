@@ -6,12 +6,13 @@ void SieveOfEratosthenes(int n)
 {
     bool prime[n + 1];
     memset(prime, true, sizeof(prime));
- 
-    for (int i = 2; i*i<=n; i++)  // i*i => repeated in both loops => beech mei, then left mei
+
+    // i*i => repeated in both loops => beech mei, then left mei
+    for (int i = 2; i*i<=n; i++)  //same loop as 09_check_if_prime.cpp => same logic
     {  
-        if (prime[i] == true) 
+        if (prime[i] == true)
         {
-            for (int j =i*i; j<=n; j+=i)   // j += i
+            for (int j =i*i; j<=n; j+=i)   // why didn't we run for j = i*1, i*2 ... i*(i-1)? because they were already considered in the outer loop when i was 1, 2, 3... i-1. 
                 prime[j] = false;
         }
     }
