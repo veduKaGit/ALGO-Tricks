@@ -21,6 +21,10 @@ int main()
     ind = upper_bound(v.begin(), v.end(), -2) - v.begin();
     cout<<ind<<endl;  // 0
     
+    ind = lower_bound(v.begin()+3, v.end(), 5) - (v.begin()+3);  //IMP => we can customise our range
+    cout<<ind<<endl;  // 0
+    
+    
     ////// now we'll see usage on map/set/multimap/multiset ////////
     // i am demonstrating on map and MULTIset (similarly we can do for set and MUTLImap)
     
