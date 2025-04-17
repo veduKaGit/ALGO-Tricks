@@ -4,6 +4,9 @@
 // Another variation:
 // https://leetcode.com/problems/find-the-duplicate-number/description/
 
+why => 32 all_occur_k_times_but_one_occurs_p_times.cpp => does NOT work here???
+because here p%k=0
+
 // since we can't use linear extra space => use Tortoise Hare
 
 // why will this algo work? 
