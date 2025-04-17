@@ -1,7 +1,10 @@
 // Given an array of integers,
-// every element appears k (**** k > 1 ****) times
-// EXCEPT for one, which appears p times (***** p>=1  AND  p%k != 0 *****). 
-// Find that single one. 
+// every element appears k times
+// EXCEPT for one, which appears p times (***** p>=1  AND  p%k != 0 *****)
+// Find that single one
+
+// since algo works when: p%k != 0
+// thus will NEVER work when k==1
 
 //time : O(N)
 //space: O(1)
