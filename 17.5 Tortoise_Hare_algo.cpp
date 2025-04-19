@@ -34,11 +34,11 @@ public:
     int findDuplicate(vector<int>& A) {
         if (A.size() <= 1) 
             return -1;
-        // Step 1: Detect cycle using Floyd's Tortoise and Hare
-        int slow = A[0];
+        
+        int slow = A[0]; // IMP => initialize both as A[0] => since linked list starts from there
         int fast = A[0];
 
-        slow = A[slow];
+        slow = A[slow];  // IMP => do this once before entering while loop => so that slow!=fast in the very 1st iteration
         fast = A[A[fast]];
 
         while(slow!=fast){
@@ -46,7 +46,6 @@ public:
             fast = A[A[fast]];
         };
 
-        // Step 2: Find the entry point of the cycle
         fast = A[0];
         while (slow != fast) {
             slow = A[slow];
