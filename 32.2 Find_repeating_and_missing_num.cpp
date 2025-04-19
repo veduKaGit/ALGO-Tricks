@@ -11,7 +11,7 @@ https://www.geeksforgeeks.org/problems/find-missing-and-repeating2512/1
 
 
 // we can get missing^repeating (XOR) => using: (xor of all array elements) ^ (xor of 1 to n)
-// we can get repeating using Tortoise Hare algo
+// we can get repeating using Tortoise Hare algo => 1st node of cycle
 // solved ?????
 // NO!!!!!
 // tortoise hare FAILS in this question
