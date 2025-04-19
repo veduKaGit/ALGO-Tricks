@@ -1,6 +1,8 @@
 // Tortoise Hare Algo
 // The same slow/fast ptr algo used in Detect_1st_node_of_cycle_in_linked_list
 
+// time O(N)
+
 // Another variation:
 // https://leetcode.com/problems/find-the-duplicate-number/description/
 
