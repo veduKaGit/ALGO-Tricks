@@ -36,7 +36,7 @@ vector<int> findTwoElement(vector<int>& arr) {
     int repeat=0, missing=0;
     
     for(int i=0;i<n;i++){  // 0 to n
-      // element at index = abs(arr[i])-1
+      // element at index = arr[i]-1
       // mark as visited by making it -ive
       // take abs() because arr[i] could have been set visited before
         if(arr[abs(arr[i])-1] > 0)
