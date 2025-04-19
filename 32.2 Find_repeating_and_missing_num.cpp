@@ -59,3 +59,59 @@ vector<int> findTwoElement(vector<int>& arr) {
 
 //soln 2:
 
+class Solution {
+  public:
+    int get_right_bit(int n){
+        for(int i=0;i<32;i++)
+            if(n&(1<<i))
+                return (1<<i);
+        return -1;
+    }
+
+    vector<int> findTwoElement(vector<int>& arr) {
+        int n = arr.size(), xor_mr = 0;
+
+        // xor_mr will have value = missing^repeating
+        for(int i=0;i<n;i++){
+            xor_mr ^= arr[i];
+            xor_mr ^= (i+1);
+        }
+        
+        int right_bit = get_right_bit(xor_mr);  //get rightmost set bit
+
+        // since xor_mr  = missing^repeating
+        // the positions where xor_mr has a set bit
+        // missing and repeating differ in their bits there
+        // one such bit it the rightmost set bit (for simplicity)
+        
+        // so we can group numbers into 2 grps
+        // one grp has rightmost bit set, one grp has it unset
+        
+        int grp_1 = 0, grp_2 = 0;  //grp_1 has it set, grp_2 has it unset
+
+        //we are doing this for both:
+        //  1. array elements
+        //  2. numbers in range [1, n]
+
+        //so definitely one of grp_1, grp_2 is repeating, and the other one is missing
+        // because missing one was counted only once (in range [1, n])
+        // repeating one was counted 3x (once in [1, n], twice in array)
+        for(int i=0;i<n;i++){
+            if(arr[i]&right_bit)
+                grp_1 ^= arr[i];
+            else
+                grp_2 ^= arr[i];
+            
+            if((i+1)&right_bit)
+                grp_1 ^= (i+1);
+            else
+                grp_2 ^= (i+1);
+        }
+        
+        for(int i=0;i<n;i++)
+            if(grp_1 == arr[i])
+                return {grp_1, grp_2};  //{repeating, missing}
+        return {grp_2, grp_1};
+    }
+};
+
