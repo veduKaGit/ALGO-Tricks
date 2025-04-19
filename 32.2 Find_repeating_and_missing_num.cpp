@@ -35,19 +35,23 @@ vector<int> findTwoElement(vector<int>& arr) {
     int n = arr.size();
     int repeat=0, missing=0;
     
-    for(int i=0;i<n;i++){  // 0 to n
-      // element at index = arr[i]-1
+    for(int i=0;i<n;i++){
+      // loop 0 to n-1
+      // we will check for arr[i] => repeating number or not
+        
+      // for element at index = (arr[i]-1) => -1 to avoid out of bound error
       // mark as visited by making it -ive
       // take abs() because arr[i] could have been set visited before
         if(arr[abs(arr[i])-1] > 0)
             arr[abs(arr[i])-1] *= -1;
+      //if already negative => its repeating number
         else
-            repeat = abs(arr[i]);  //if already negative => its repeating number
+            repeat = abs(arr[i]);
     }
     
     for(int i=0;i<n;i++)
         if(arr[i] > 0)  // means element at index i was never visited
-            missing = i+1; // so i is the missing number
+            missing = i+1; // so (i+1) is the missing number
     
     return {repeat, missing};
 }
