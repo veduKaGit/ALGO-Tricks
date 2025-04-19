@@ -82,19 +82,19 @@ class Solution {
         // since xor_mr  = missing^repeating
         // the positions where xor_mr has a set bit
         // missing and repeating differ in their bits there
-        // one such bit it the rightmost set bit (for simplicity)
+        // one such bit is the rightmost set bit
         
         // so we can group numbers into 2 grps
         // one grp has rightmost bit set, one grp has it unset
         
         int grp_1 = 0, grp_2 = 0;  //grp_1 has it set, grp_2 has it unset
 
-        //we are doing this for both:
+        // grp_1, grp_2 will be made using both:
         //  1. array elements
         //  2. numbers in range [1, n]
 
-        //so definitely one of grp_1, grp_2 is repeating, and the other one is missing
-        // because missing one was counted only once (in range [1, n])
+        // so definitely one of grp_1, grp_2 is repeating, and the other one is missing
+        // because missing one was counted only once (in numbers [1, n])
         // repeating one was counted 3x (once in [1, n], twice in array)
         for(int i=0;i<n;i++){
             if(arr[i]&right_bit)
