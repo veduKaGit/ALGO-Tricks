@@ -1,35 +1,40 @@
-// used to find the majority element among the given elements that have more than N/2 occurrences. 
+// used to find the majority element among the given elements
+// that have >  floor(N/2) occurrences. 
+
 // takes 2 traversals over the given elements
 // works in O(N) time complexity and O(1) space complexity
 
 
 
-int findMajority(int arr[], int n)
-{
-	int i, candidate = -1, votes = 0;
-	// Finding majority candidate
-	for (i = 0; i < n; i++) {
-	      if (votes == 0) {
-		candidate = arr[i];
-		votes = 1;
-	      }
-	      else{
-		  if (arr[i] == candidate)
-		    votes++;
-		  else
-		    votes--;
-	      }
-	}
-  
-	int count = 0;
-	
-  	// Checking if majority candidate occurs more than n/2 times
-	for (i = 0; i < n; i++) {
-		if (arr[i] == candidate)
-			count++;
-	}
+class Solution {
+public:
+    int majorityElement(vector<int>& arr) {
+        int n = arr.size();
+        int major = arr[0], freq = 1;
 
-	if (count > n/2)
-	  	return candidate;
-	return -1;
-}
+        // write case 1 BEFORE case 2
+        // this ques is easy, but in the next part, we'll know why
+        // case 1 BEFORE case 2 is important
+        for(int i=1;i<n;i++){
+            if(arr[i] == major){   //if already exists => case 1
+                freq++;
+            }else if(freq == 0){   //if new major element => case 2 
+                major = arr[i];
+                freq = 1;
+            }else{
+                freq--;
+            }
+        }
+
+        freq = 0;
+        // Checking if majority candidate occurs more than n/2 times
+        for (int i=0; i<n; i++) {
+            if (arr[i] == major)
+                freq++;
+        }
+
+        if (freq > (n/2))
+            return major;
+        return -1;
+    }
+};
