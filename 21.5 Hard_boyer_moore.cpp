@@ -5,7 +5,7 @@ https://leetcode.com/problems/majority-element-ii/description/
 // there can be only 2 such elements (since its >, not >=)
 
 
-//logic:
+// 3 cases exist:
 // 1. there are NO elements that appears more than n/3 times => then whatever the algorithm 
 //    got from 1st iteration wound be rejected in the second iteration.
 // 2. there is only 1 element that appears more than n/3 times => after 1st iteration one of 
