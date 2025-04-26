@@ -11,8 +11,8 @@ https://leetcode.com/problems/majority-element-ii/description/
 // 2. there is only 1 element that appears more than n/3 times => after 1st iteration one of 
 //    the candicate must be that appears more than n/3 times, the other candicate 
 //    is not necessarily be the second most frequent but it would be rejected in 2nd iteration.
-// 3. there are 2 elments that appear more than n/3 times => candicates would contain both of
-//    them
+// 3. there are 2 elments that appear more than n/3 times => 2nd iteration would contain 
+//    both of them
 
 
 class Solution {
