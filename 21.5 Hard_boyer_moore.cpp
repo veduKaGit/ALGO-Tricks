@@ -23,7 +23,7 @@ public:
         int major1 = INT_MAX, major2=INT_MAX, freq1 = 0, freq2 = 0;
 
         // first always set major1, major2 before checking for freq1,freq2 = 0
-        // bcz if we change the order of if/else statements (ie. check for freq before major)
+        // bcz if we change the order of if/else statements (ie. check for freq==0 before major==nums[i)
         // its possible at some point, freq1 or freq2 == 0
         // and we end up setting major1 and major2 as the same element
         for(int i=0;i<n;i++){
