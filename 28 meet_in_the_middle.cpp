@@ -7,7 +7,8 @@
 // find all possible subset sums of N integers 
 // check if it is less than or equal S and keep track of such a subset with maximum sum. 
 // Time complexity => O(2^n) and n is at most 40. 2^40 will be quite large.
-  
+
+// DP is not practical due to the large value of sum
 
 // OPTIMIZED:
 // Meet in the middle => search technique => used when the input is small but NOT as small that brute force can be used. 
