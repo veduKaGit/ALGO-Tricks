@@ -9,9 +9,9 @@ public:
     TreeNode* right;
 
     TreeNode() {
-        val = 0;
-        left = nullptr;
-        right = nullptr;
+        val = 0;  //or this->val = 0;
+        left = nullptr; // or this->left = NULL;
+        right = nullptr; // or this->right = NULL;
     }
 
     TreeNode(int x) {
