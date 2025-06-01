@@ -1,6 +1,3 @@
-// Subarray Sums Divisible by K
-
-
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
@@ -15,8 +12,7 @@ public:
             if(rem<0)   
                 rem+=k;
             
-            if(m.find(rem) != m.end())
-                ans += m[rem];
+            ans += m[rem];
             
             m[rem]++;   //IMP -> m[rem]++
         }
