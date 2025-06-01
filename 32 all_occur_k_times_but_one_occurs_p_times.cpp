@@ -1,6 +1,6 @@
 // Given an array of integers,
 // every element appears k times
-// EXCEPT for one, which appears p times (***** p>=1  AND  p%k != 0 *****)
+// EXCEPT for one, which appears p times (***** p%k != 0 *****)
 // Find that single one
 
 // since algo works when: p%k != 0
