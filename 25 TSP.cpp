@@ -1,3 +1,5 @@
+simply put, its bitmask + dp
+
 // Travelling Salesman Problem
 
 // Given a set of cities and the distance between EVERY pair of cities, 
@@ -57,6 +59,13 @@
 // Auxiliary Space : O(n^2) , where n is number of Nodes/Cities here.
 
 
+
+// WHY we start and end at city_0? Does that guarantee shortest path?
+// ANS: In TSP, we are looking for a cycle, not a path.
+// 0 → 1 → 2 → 3 → 0
+// 1 → 2 → 3 → 0 → 1
+// 2 → 3 → 0 → 1 → 2
+// All of these represent the same tour, just starting at different cities.
 
 
 
