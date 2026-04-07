@@ -11,7 +11,7 @@ public:
             tot += nums[i];
             int rem = tot%k;
             if(rem<0)   
-                rem+=k;
+                rem+=k;  // since nums[i] can be -ive
             
             ans += m[rem];
             
