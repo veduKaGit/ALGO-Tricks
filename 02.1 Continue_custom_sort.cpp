@@ -4,9 +4,9 @@
 // the c_sort logic MUST always have < (or >)
 // but NEVER <= (or >=)
 
-// WHY? bcz:
-// sort() requires strict weak ordering. 
-// One of its rules is irreflexivity: c_sort(x, x) must always be false.
+// WHY? 
+// bcz in cpp, sort() function is written in such a way that one of its rules is irreflexivity
+// thus, c_sort(x, x) must always be false.
 
 class Solution {
 public:
