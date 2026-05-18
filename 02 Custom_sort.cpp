@@ -1,15 +1,20 @@
 // SORT vector<pair<int, int>>
 // customize your own sort function
 
+
+// IMP POINTS:
+
+1
 // why we use '&'?
 // it will work even without it
 // we just pass by reference, it avoids copying the object. Thus no TLE.
 
-
+2
 // IF we have csort function inide a class => use STATIC => static bool csort ()
 // Static functions belong to the class itself
 // not to an instance of the class
 // They can be called directly using the class name, without needing an object
+// otherwise we get syntax errors
 
 
 #include <bits/stdc++.h>
@@ -32,3 +37,5 @@ int main()
     
     return 0;
 }
+
+
