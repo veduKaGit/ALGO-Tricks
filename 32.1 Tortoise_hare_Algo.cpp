@@ -22,6 +22,11 @@ because here p%k=0
 // we find a cycle => 1 -> 4 -> 3 -> 1
 // this cycle starts at 1 => thats our answer
 
+// why repeating element is start of the cycle?
+// VERY SIMPLE!
+// in the linked list we create
+// every node points to every other node
+// since one node is repeating, the cycle will obviously form at that node
 
 // NOTE: the below soln works even when:
 // we have array of size n+1
